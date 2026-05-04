@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio - Yasmin Cristine</title>
     <style>
         /* Estilo Geral */
+        
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
@@ -14,8 +16,8 @@
             flex-direction: column;
             align-items: center;
         }
-
         /* Menu de Navegação */
+        
         header {
             background-color: #333;
             width: 100%;
@@ -24,7 +26,7 @@
             position: fixed;
             top: 0;
         }
-
+        
         nav a {
             color: white;
             text-decoration: none;
@@ -32,34 +34,38 @@
             font-weight: bold;
             font-size: 18px;
         }
-
         /* MÁGICA AQUI: Esconde todas as seções por padrão */
+        
         section {
-            display: none; 
+            display: none;
             margin-top: 100px;
             width: 80%;
             max-width: 600px;
             background: white;
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
-
         /* MÁGICA AQUI: Só mostra a seção que estiver na URL (ex: #sobre) */
+        
         section:target {
             display: block;
         }
-
         /* Mostra a Home por padrão quando não houver nada selecionado */
+        
         #home {
             display: block;
         }
-        :target ~ #home {
+        
+         :target~#home {
             display: none;
         }
-
         /* Estilo dos textos e botões */
-        h1 { color: #333; }
+        
+        h1 {
+            color: #333;
+        }
+        
         .btn {
             display: inline-block;
             margin-top: 10px;
@@ -71,6 +77,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <header>
@@ -115,4 +122,5 @@
     </section>
 
 </body>
+
 </html>
