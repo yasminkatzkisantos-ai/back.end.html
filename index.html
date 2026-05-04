@@ -3,89 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio - Yasmin Cristine Katzki</title>
+    <title>Portfólio - Yasmin Cristine</title>
     <style>
-        /* Estilização Geral (CSS) */
+        /* Estilo Geral */
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
             background-color: #f4f4f4;
-            color: #333;
-            line-height: 1.6;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
+        /* Menu de Navegação */
         header {
             background-color: #333;
-            color: #fff;
-            padding: 1rem 0;
+            width: 100%;
+            padding: 20px 0;
             text-align: center;
             position: fixed;
-            width: 100%;
             top: 0;
-            z-index: 1000;
         }
 
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-
-        nav ul li a {
-            color: #fff;
+        nav a {
+            color: white;
             text-decoration: none;
+            margin: 0 15px;
             font-weight: bold;
+            font-size: 18px;
         }
 
+        /* MÁGICA AQUI: Esconde todas as seções por padrão */
         section {
-            padding: 80px 20px; /* Espaço para não ficar atrás do header */
-            max-width: 800px;
-            margin: auto;
-            border-bottom: 1px solid #ccc;
-        }
-
-        h1, h2 {
-            color: #222;
-        }
-
-        .container {
+            display: none; 
+            margin-top: 100px;
+            width: 80%;
+            max-width: 600px;
             background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
-        footer {
-            text-align: center;
-            padding: 20px;
+        /* MÁGICA AQUI: Só mostra a seção que estiver na URL (ex: #sobre) */
+        section:target {
+            display: block;
+        }
+
+        /* Mostra a Home por padrão quando não houver nada selecionado */
+        #home {
+            display: block;
+        }
+        :target ~ #home {
+            display: none;
+        }
+
+        /* Estilo dos textos e botões */
+        h1 { color: #333; }
+        .btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
             background: #333;
             color: white;
-        }
-
-        form input, form textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        button {
-            background-color: #333;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #555;
+            text-decoration: none;
+            border-radius: 5px;
         }
     </style>
 </head>
@@ -93,65 +75,44 @@
 
     <header>
         <nav>
-            <ul>
-                <li><a href="#sobre">Sobre mim</a></li>
-                <li><a href="#formacao">Formação</a></li>
-                <li><a href="#portfolio">Portfólio</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
+            <a href="#home">Início</a>
+            <a href="#sobre">Sobre mim</a>
+            <a href="#formacao">Formação</a>
+            <a href="#portfolio">Portfólio</a>
+            <a href="#contato">Contato</a>
         </nav>
     </header>
 
+    <section id="home">
+        <h1>Bem-vinda, Yasmin!</h1>
+        <p>Clique nos links acima para navegar pelas partes do meu portfólio.</p>
+    </section>
+
     <section id="sobre">
-        <div class="container">
-            <h1>Sobre mim</h1>
-            <p>Olá, meu nome é <strong>Yasmin Cristine Katzki</strong>.</p>
-            <p><strong>Apresentação:</strong> Tenho 16 anos, sou estudante de Desenvolvimento de Sistemas. Alguns me chamam de Mimi e tenho uma cachorrinha.</p>
-            <p><strong>Hobbies:</strong> Gosto muito de pintar as unhas e passar tempo com meus amigos.</p>
-        </div>
+        <h1>Sobre mim</h1>
+        <p>Olá, meu nome é <strong>Yasmin Cristine Katzki</strong>.</p>
+        <p>Tenho 16 anos, alguns me chamam de Mimi e tenho uma cachorrinha.</p>
+        <p>Meu hobby favorito é pintar as unhas.</p>
     </section>
 
     <section id="formacao">
-        <div class="container">
-            <h2>Formação</h2>
-            <p><strong>Ensino:</strong> Cursando Técnico em Desenvolvimento de Sistemas.</p>
-            <p><strong>Cursos complementares:</strong> Back-End, Front-End e Inovação Técnica.</p>
-            <p><strong>Idiomas:</strong> Português e Inglês em aprendizado.</p>
-        </div>
+        <h1>Formação</h1>
+        <p><strong>Ensino:</strong> Curso técnico desenvolvedor de sistemas.</p>
+        <p><strong>Cursos:</strong> BackEnd e FrontEnd.</p>
     </section>
 
     <section id="portfolio">
-        <div class="container">
-            <h2>Portfólio</h2>
-            <p>Veja meus trabalhos aqui:</p>
-            <ul>
-                <li><a href="https://github.com/yasminkatzkisantos-ai/yami" target="_blank">Meu GitHub Principal</a></li>
-                <li><a href="https://github.com/yasminkatzkisantos-ai" target="_blank">Repositório de Formulários</a></li>
-            </ul>
-        </div>
+        <h1>Meu Portfólio</h1>
+        <p>Confira meus códigos no GitHub:</p>
+        <a href="https://github.com/yasminkatzkisantos-ai/yami" class="btn" target="_blank">Ver GitHub</a>
     </section>
 
     <section id="contato">
-        <div class="container">
-            <h2>Contato</h2>
-            <form>
-                <label>Nome:</label>
-                <input type="text" placeholder="Seu nome">
-                
-                <label>E-mail:</label>
-                <input type="email" placeholder="seu@email.com">
-                
-                <label>Mensagem:</label>
-                <textarea rows="4" placeholder="Sua mensagem"></textarea>
-                
-                <button type="button">Enviar Mensagem</button>
-            </form>
-        </div>
+        <h1>Contato</h1>
+        <p>Nome: <input type="text" style="width:100%"></p>
+        <p>E-mail: <input type="email" style="width:100%"></p>
+        <button class="btn">Enviar</button>
     </section>
-
-    <footer>
-        <p>&copy; 2024 Yasmin Cristine Katzki - Todos os direitos reservados.</p>
-    </footer>
 
 </body>
 </html>
